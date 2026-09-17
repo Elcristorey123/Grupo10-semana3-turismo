@@ -1,0 +1,49 @@
+/* ============================================================
+   PASO 2: Navbar híbrido - refuerzo de backdrop-blur
+   Tailwind aplica backdrop-blur, pero como Bootstrap pinta
+   bg-dark, aquí aseguramos transparencia + desenfoque.
+   ============================================================ */
+.navbar.backdrop-blur {
+  background-color: rgba(33, 37, 41, 0.75) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Ajuste de hover en los nav-link para mejor contraste */
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: #ffc107;
+}
+/* ============================================================
+   PASO 3: Hero Section - refuerzos híbridos
+   Bootstrap aplica bg-gradient-to-r, pero como su nombre es
+   una utilidad Tailwind, aquí aseguramos el gradiente con
+   CSS puro por si el CDN de Tailwind tarda en cargar.
+   ============================================================ */
+.hero-section {
+  background: linear-gradient(to right, #1e3a8a, #3730a3, #0e7490);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Refuerzo de text-balance (Tailwind lo aplica, pero algunos
+   navegadores antiguos lo ignoran; aquí lo dejamos explícito) */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Refuerzo de max-w-3xl (48rem = 768px) */
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+/* Imagen decorativa del hero */
+.hero-image-wrapper {
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.hero-image-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
+}
