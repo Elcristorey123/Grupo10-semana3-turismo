@@ -1,6 +1,8 @@
 :root {
   --turquesa: #00b4a6;
   --turquesa-dark: #008f83;
+  --amarillo: #ffc107;
+  --amarillo-dark: #e0a800;
   --coral: #ff6b6b;
   --coral-dark: #e85555;
   --dorado: #f4a261;
@@ -81,6 +83,125 @@ img {
   }
 }
 
+/* ============ NAVBAR (Integrante 1) ============ */
+.navbar.backdrop-blur {
+  background-color: rgba(15, 41, 66, 0.75) !important;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  transition: var(--transition);
+}
+
+.navbar-dark .navbar-brand {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: var(--transition);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+  color: var(--amarillo);
+}
+
+/* ============ HERO (Integrante 1) ============ */
+.hero-section {
+  background: linear-gradient(135deg, #0f2942 0%, #1a3a5c 50%, #00b4a6 100%);
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 5rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 80% 20%,
+    rgba(0, 180, 166, 0.3) 0%,
+    transparent 50%
+  );
+  pointer-events: none;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-section .display-3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-section .lead {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+}
+
+.hero-section .btn-warning {
+  background: var(--amarillo);
+  border-color: var(--amarillo);
+  color: var(--oscuro);
+  font-weight: 700;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  transition: var(--transition);
+}
+
+.hero-section .btn-warning:hover {
+  background: var(--amarillo-dark);
+  border-color: var(--amarillo-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 193, 7, 0.5);
+}
+
+.hero-section .btn-outline-light {
+  border-radius: 50px;
+  padding: 0.85rem 2rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.hero-section .btn-outline-light:hover {
+  transform: translateY(-3px);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+.max-w-3xl {
+  max-width: 48rem;
+}
+
+.hero-image-wrapper {
+  transform: rotate(-2deg);
+  transition: transform 0.4s ease;
+}
+
+.hero-image-wrapper:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+/* ============ SECCIONES ============ */
 .section-destinos {
   padding: 7rem 0;
   background: var(--fondo);
@@ -138,6 +259,7 @@ img {
   margin: 0 auto;
 }
 
+/* ============ TARJETAS DE DESTINO ============ */
 .destino-card {
   background: #fff;
   border-radius: var(--radius);
@@ -315,12 +437,12 @@ img {
 }
 
 .btn-destino {
-  background: var(--turquesa);
-  color: #fff;
+  background: var(--amarillo);
+  color: var(--oscuro);
   border: none;
   padding: 0.65rem 1.5rem;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.9rem;
   transition: var(--transition);
   text-decoration: none;
@@ -328,12 +450,13 @@ img {
 }
 
 .btn-destino:hover {
-  background: var(--turquesa-dark);
-  color: #fff;
+  background: var(--amarillo-dark);
+  color: var(--oscuro);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 180, 166, 0.4);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
 }
 
+/* ============ FORMULARIO RESERVA ============ */
 .section-reserva .section-tag::before,
 .section-reserva .section-tag::after {
   display: none;
@@ -401,12 +524,8 @@ img {
 }
 
 .btn-reservar {
-  background: linear-gradient(
-    135deg,
-    var(--turquesa) 0%,
-    var(--turquesa-dark) 100%
-  );
-  color: #fff;
+  background: linear-gradient(135deg, var(--amarillo) 0%, #ff9800 100%);
+  color: var(--oscuro);
   border: none;
   font-weight: 700;
   padding: 1rem 2rem;
@@ -425,9 +544,9 @@ img {
 }
 
 .btn-reservar:hover {
-  color: #fff;
+  color: var(--oscuro);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 180, 166, 0.4);
+  box-shadow: 0 12px 28px rgba(255, 193, 7, 0.5);
 }
 
 .btn-reservar:hover svg {
@@ -472,6 +591,7 @@ img {
   margin: 0;
 }
 
+/* ============ TOAST ============ */
 .toast-exito {
   position: fixed;
   top: 2rem;
@@ -582,6 +702,7 @@ img {
   }
 }
 
+/* ============ RESPONSIVE ============ */
 @media (max-width: 767.98px) {
   .section-destinos,
   .section-reserva {
@@ -595,5 +716,12 @@ img {
   }
   .destino-img {
     height: 220px;
+  }
+  .hero-section {
+    padding: 6rem 0 3rem;
+    min-height: auto;
+  }
+  .hero-section .display-3 {
+    font-size: 2rem;
   }
 }
